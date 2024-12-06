@@ -1,0 +1,15 @@
+name: Building Docker Images For Roboshop
+on:
+  workflow_call:
+    inputs:
+      component_name:
+        type: string
+jobs:
+  docker-ci:
+    runs-on: [self-hosted]
+    steps:
+      - name: git-clone
+        run: |
+          echo "Sample workflow ${{ inputs.component_name }} - Secrets- ${{ secrets.token }}"
+          
+          
