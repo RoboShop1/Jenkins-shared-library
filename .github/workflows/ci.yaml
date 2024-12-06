@@ -1,0 +1,14 @@
+name: continuous-integration
+on:
+  workflow_call:
+    inputs:
+      component_name:
+        type: string
+        required: true
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-clone
+        run: |
+          echo "This is component - ${{ inputs.component_name }}"
