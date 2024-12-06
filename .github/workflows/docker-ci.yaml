@@ -17,10 +17,15 @@ jobs:
 
       - name: docker build
         run: |
-          
-          echo docker build -t ${{ secrets.docker_username }}/$(echo ${image_name#*/}) .
+           docker build -t ${{ secrets.docker_username }}/$(echo ${image_name#*/}) .
         env:
           image_name: ${{ inputs.image_name }}
+
+#      - name: docker push
+#        run: |
+#          docker push ${{ secrets.docker_username }}/$(echo ${image_name#*/})
+
+
 
           
           
