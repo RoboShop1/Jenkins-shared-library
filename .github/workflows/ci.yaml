@@ -15,3 +15,15 @@ jobs:
       - name: git-clone
         run: |
           printenv
+      - name: env1-access
+        run: |
+          echo "This is repo ${{ github.repository }}"
+          echo "------------------------------------"
+          echo "This is repo ${GITHUB_REPOSITORY}"
+          echo "------------------------------------"
+          echo "This is ${{ github.ref_name }}"
+          echo "---------------------------"
+          echo "This is ${{ GITHUB_REF_NAME }}"
+          echo "----------------------------"
+          
+          
