@@ -6,6 +6,7 @@ on:
         type: string
 jobs:
   docker-ci:
+    environment: dev
     runs-on: [self-hosted]
     steps:
       - name: git-clone
