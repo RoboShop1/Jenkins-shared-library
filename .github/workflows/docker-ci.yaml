@@ -2,7 +2,7 @@ name: Building Docker Images For Roboshop
 on:
   workflow_call:
     inputs:
-      component_name:
+      image_name:
         type: string
 jobs:
   docker-ci:
@@ -14,5 +14,13 @@ jobs:
       - name: docker login
         run: |
           docker login -u ${docker_username} -p ${docker_password}
+
+      - name: docker build
+        run: |
+          
+          echo docker build -t ${{ secrets.docker_username }}/$(echo ${image_name#*/}) .
+        env:
+          image_name: ${{ inputs.image_name }}
+
           
           
