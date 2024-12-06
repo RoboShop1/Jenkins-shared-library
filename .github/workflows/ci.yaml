@@ -5,6 +5,8 @@ on:
       component_name:
         type: string
         required: true
+      docker_build:
+        type: string
 jobs:
   ci:
     runs-on: ubuntu-latest
