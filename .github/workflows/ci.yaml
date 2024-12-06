@@ -6,7 +6,7 @@ on:
         type: string
         required: true
       docker_build:
-        type: string
+        type: boolean
         required: true
 jobs:
   ci:
