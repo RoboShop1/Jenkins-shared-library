@@ -22,8 +22,6 @@ jobs:
       - name: docker build
         run: |
            docker build -t ${{ secrets.docker_username }}/$(echo ${image_name#*/}) .
-        env:
-
 
       - name: docker push
         run: |
