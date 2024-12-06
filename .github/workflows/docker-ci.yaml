@@ -6,11 +6,13 @@ on:
         type: string
 jobs:
   docker-ci:
-    environment: dev
     runs-on: [self-hosted]
+    env:
+      docker_username: ${{ secrets.docker_username }}
+      docker_password: ${{ secrets.docker_password }}
     steps:
-      - name: git-clone
+      - name: docker login
         run: |
-          echo "Sample workflow ${{ inputs.component_name }} - Secrets- ${{ secrets.token }}"
+          docker login -u ${docker_username} -p ${docker_password}
           
           
