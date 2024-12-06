@@ -23,7 +23,7 @@ jobs:
           echo "------------------------------------"
           echo "This is ${{ github.ref_name }}"
           echo "---------------------------"
-          echo "This is ${{ GITHUB.REF_NAME }}"
+          echo "This is ${GITHUB_REF_NAME}"
           echo "----------------------------"
           
           
