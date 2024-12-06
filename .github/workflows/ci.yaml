@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: git-clone
         run: |
-          echo "This is component - ${{ inputs.component_name }}"
+          printenv
