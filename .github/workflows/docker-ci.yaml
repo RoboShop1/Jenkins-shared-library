@@ -31,7 +31,7 @@ jobs:
 
       - name: clean up space
         run: |
-          docker rmi -f ${{ secrets.docker_username }}/$(echo ${image_name#*/})
+          echo docker rmi -f ${docker_username}/$(echo ${image_name#*/})
 
 
 
