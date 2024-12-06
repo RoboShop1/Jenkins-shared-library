@@ -25,11 +25,11 @@ jobs:
 
       - name: docker push
         run: |
-          echo docker push ${{ secrets.docker_username }}/$(echo ${image_name#*/})
+           docker push ${{ secrets.docker_username }}/$(echo ${image_name#*/})
 
       - name: clean up space
         run: |
-          echo docker rmi -f ${docker_username}/$(echo ${image_name#*/})
+           docker rmi -f ${docker_username}/$(echo ${image_name#*/})
 
 
 
