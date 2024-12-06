@@ -10,6 +10,7 @@ on:
         required: true
 jobs:
   ci:
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: git-clone
