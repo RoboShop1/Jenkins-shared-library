@@ -10,6 +10,7 @@ jobs:
     env:
       docker_username: ${{ secrets.docker_username }}
       docker_password: ${{ secrets.docker_password }}
+      image_name: ${{ inputs.image_name }}
     steps:
       - name: code-checkout
         uses: actions/checkout@v4
@@ -22,7 +23,7 @@ jobs:
         run: |
            docker build -t ${{ secrets.docker_username }}/$(echo ${image_name#*/}) .
         env:
-          image_name: ${{ inputs.image_name }}
+
 
       - name: docker push
         run: |
