@@ -13,7 +13,7 @@ then
 git clone https://github.com/RoboShop1/r-shipping.git /app
 cd /app
 for i in `ls db`; do
-echo mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/${i}.sql
+echo mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/${i}
 done
 fi
 
@@ -29,6 +29,6 @@ then
 git clone https://github.com/RoboShop1/r-catalogue.git /app
 cd /app
 for i in `ls db`; do
-echo mongosh --host ${mongo_host} < db/master-data.js
+echo mongosh --host ${mongo_host} < db/${i}
 done
 fi
