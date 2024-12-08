@@ -2,7 +2,7 @@ if [[ -v db_type ]]; then echo ""; else echo  "** db_type ** variable is missing
 
 if [ "${db_type}" == "mysql" ];
 then
-    if [[ -v mysql_host &&  -v mysql_username && -v -mysql_password ]] ; then
+    if [[ -v mysql_host &&  -v mysql_username && -v mysql_password ]] ; then
       echo ""
       else
       echo "** mysql_host ** check variables"
