@@ -13,6 +13,7 @@ cd /app
 for i in `ls db`; do
 echo mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < /app/db/${$i}.sql
 done
+fi
 
 
 if [ "${db_type}" == "mongo" ];
@@ -26,3 +27,4 @@ cd /app
 for i in `ls db`; do
 echo mongosh --host ${mongo_host} </app/db/master-data.js
 done
+fi
