@@ -3,6 +3,8 @@ if [[ -v db_type ]]; then echo ""; else echo  "** db_type ** variable is missing
 if [ "${db_type}" == "mysql" ];
 then
     if [[ -v mysql_host &&  -v mysql_username && -v -mysql_password ]] ; then
+      echo ""
+      else
       echo "** mysql_host ** check variables"
       echo "** mysql_username ** check variables"
       echo "** mysql_password ** check variables"
@@ -19,6 +21,8 @@ fi
 if [ "${db_type}" == "mongo" ];
 then
     if [[ -v mongo_host ]] ; then
+      echo ""
+      else
       echo "** mongo_host ** check variables"
       exit 1
       fi
