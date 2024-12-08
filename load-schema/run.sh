@@ -1,4 +1,4 @@
-if [[ -v db_type ]]; then  echo  "** db_type ** variable is missing" && exit 1 ; fi
+if [[ -v db_type ]]; then echo ""; else echo  "** db_type ** variable is missing" && exit 1 ; fi
 
 if [ "${db_type}" == "mysql" ];
 then
