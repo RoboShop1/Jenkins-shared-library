@@ -17,6 +17,7 @@ for i in `ls db`; do
   echo ${i}
 mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/${i}
 done
+sleep 50
 fi
 
 
