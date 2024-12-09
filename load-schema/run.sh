@@ -12,7 +12,9 @@ then
       fi
 git clone https://github.com/RoboShop1/r-shipping.git /app
 cd /app
+ls -la db
 for i in `ls db`; do
+  echo ${i}
 mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/${i}
 done
 fi
