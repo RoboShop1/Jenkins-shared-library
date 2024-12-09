@@ -12,8 +12,14 @@ then
       fi
 git clone https://github.com/RoboShop1/r-shipping.git /app
 cd /app
+echo "mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/app-user.sql"
 mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/app-user.sql
+
+
+echo "mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/master-data.sql"
 mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/master-data.sql
+
+echo "mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/schema.sql"
 mysql -h ${mysql_host} -u${mysql_username} -p${mysql_password} < db/schema.sql
 
 fi
