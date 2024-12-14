@@ -1,0 +1,25 @@
+name: argocd deploy
+on:
+  workflow_call:
+    inputs:
+      component:
+        type: string
+        required: true
+      env:
+        type: string
+        required: true
+
+jobs:
+  argocd-deploy:
+    runs-on: ["self-hosted"]
+    steps:
+      - name: get-bootstrap
+        run: |
+          awk eks update-kubeconfig --name ${{ env }}-eks
+
+      - name: code-checkout
+        uses: actions/checkout@v4
+
+      - name: argocd ${{ component }} deploy
+        run: |
+          kubectl apply -f argocd/${{ component }}.yaml
