@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: get-bootstrap
         run: |
-          awk eks update-kubeconfig --name ${{ inputs.env }}-eks
+          aws eks update-kubeconfig --name ${{ inputs.env }}-eks
 
       - name: code-checkout
         uses: actions/checkout@v4
