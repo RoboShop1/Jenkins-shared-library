@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: get-bootstrap
         run: |
-          awk eks update-kubeconfig --name ${{ env }}-eks
+          awk eks update-kubeconfig --name ${{ inputs.env }}-eks
 
       - name: code-checkout
         uses: actions/checkout@v4
 
       - name: argocd ${{ component }} deploy
         run: |
-          kubectl apply -f argocd/${{ component }}.yaml
+          kubectl apply -f argocd/${{ inputs.component }}.yaml
