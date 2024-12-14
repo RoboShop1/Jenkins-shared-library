@@ -10,7 +10,7 @@ on:
         required: true
 
 jobs:
-  argocd-deploy:
+  argocd-dev-deploy:
     runs-on: ["self-hosted"]
     steps:
       - name: get-bootstrap
