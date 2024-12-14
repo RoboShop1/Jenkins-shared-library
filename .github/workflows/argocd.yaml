@@ -20,6 +20,6 @@ jobs:
       - name: code-checkout
         uses: actions/checkout@v4
 
-      - name: argocd ${{ component }} deploy
+      - name: argocd ${{ inputs.component }} deploy
         run: |
           kubectl apply -f argocd/${{ inputs.component }}.yaml
